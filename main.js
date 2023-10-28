@@ -12,7 +12,9 @@ const progress = $("#progress");
 const prevBtn = $(".btn-prev");
 const nextBtn = $(".btn-next");
 const randomBtn = $(".btn-random");
+const randomIcon = $(".btn-random i");
 const repeatBtn = $(".btn-repeat");
+const repeatIcon = $(".btn-repeat i");
 const playlist = $(".playlist");
 const PLAYER_STORAGE_KEY = "F8-PLAYER";
 
@@ -326,6 +328,7 @@ const app = {
     randomBtn.onclick = function () {
       app.isRandom = !app.isRandom;
       randomBtn.classList.toggle("active", app.isRandom);
+      randomIcon.classList.toggle("active", app.isRandom);
       app.setConfig("isRandom", app.isRandom);
     };
 
@@ -333,6 +336,7 @@ const app = {
     repeatBtn.onclick = function () {
       app.isRepeat = !app.isRepeat;
       repeatBtn.classList.toggle("active", app.isRepeat);
+      repeatIcon.classList.toggle("active", app.isRepeat);
       app.setConfig("isRepeat", app.isRepeat);
     };
 
@@ -378,6 +382,7 @@ const app = {
     }
   },
   loadConfig() {
+    //hien thi trang thai trong config
     if (this.config.isRandom) {
       this.isRandom = this.config.isRandom;
     }
@@ -388,8 +393,9 @@ const app = {
       this.currentIndex = this.config.currentIndex;
     }
     randomBtn.classList.toggle("active", app.isRandom);
-    //hien thi trang thai trong config
     repeatBtn.classList.toggle("active", app.isRepeat);
+    randomIcon.classList.toggle("active", app.isRandom);
+    repeatIcon.classList.toggle("active", app.isRepeat);
   },
   prevSong() {
     this.currentIndex--;
