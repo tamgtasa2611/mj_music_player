@@ -180,7 +180,7 @@ header h2 {
   margin-bottom: 12px;
   position: relative;
   background-color: transparent;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   z-index: 0;
   padding: 8px 16px;
   border-radius: 5px;
