@@ -234,6 +234,10 @@ header h2 {
   cursor: pointer;
 }
 
+.btn i:hover {
+  background-color: rgba(255,255,255, 0.5);
+}
+
 @media only screen and (max-width: 720px) {
   body {
     background-image: url("img/background5.jpg");
