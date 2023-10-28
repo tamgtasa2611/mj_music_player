@@ -193,6 +193,7 @@ header h2 {
 
 .song:hover {
   cursor: pointer;
+  background-color: rgba(40, 202, 247, 0.5);
 }
 
 .song.active .option,
