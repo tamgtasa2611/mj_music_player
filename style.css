@@ -245,7 +245,6 @@ header h2 {
 }
 
 .btn i:hover {
-  color: rgba(181, 239, 255, 0.5);
   transform: scale(1.2);
   transition: all 500ms ease;
 }
