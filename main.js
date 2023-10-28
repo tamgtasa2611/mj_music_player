@@ -87,6 +87,42 @@ const app = {
       path: "/music/you_rock_my_world.mp3",
       image: "/img/you_rock_my_world.jpg",
     },
+    {
+      name: "Thriller",
+      singer: "Michael Jackson",
+      path: "/music/thriller.mp3",
+      image: "/img/thriller.jpg",
+    },
+    {
+      name: "Butterflies",
+      singer: "Michael Jackson",
+      path: "/music/butterflies.mp3",
+      image: "/img/invincible.jpg",
+    },
+    {
+      name: "Unbreakable",
+      singer: "Michael Jackson",
+      path: "/music/unbreakable.mp3",
+      image: "/img/invincible.jpg",
+    },
+    {
+      name: "Heaven Can Wait",
+      singer: "Michael Jackson",
+      path: "/music/heaven_can_wait.mp3",
+      image: "/img/invincible.jpg",
+    },
+    {
+      name: "2000 Watts",
+      singer: "Michael Jackson",
+      path: "/music/2000_watts.mp3",
+      image: "/img/invincible.jpg",
+    },
+    {
+      name: "Break Of Dawn",
+      singer: "Michael Jackson",
+      path: "/music/break_of_dawn.mp3",
+      image: "/img/invincible.jpg",
+    },
   ],
   render: function () {
     app.setConfig("currentIndex", app.currentIndex);
@@ -195,11 +231,12 @@ const app = {
 
     //prev / next song
     prevBtn.onclick = function () {
-      if (app.isRandom) {
-        app.playRandom();
-      } else {
-        app.prevSong();
-      }
+      // if (app.isRandom) {
+      //   app.playRandom();
+      // } else {
+      //   app.prevSong();
+      // }
+      app.prevSong();
       playBtn.click();
       audio.play();
       app.render();
@@ -274,8 +311,12 @@ const app = {
     }
   },
   loadConfig() {
-    this.isRandom = this.config.isRandom;
-    this.isRepeat = this.config.isRepeat;
+    if (this.config.isRandom) {
+      this.isRandom = this.config.isRandom;
+    }
+    if (this.config.isRepeat) {
+      this.isRepeat = this.config.isRepeat;
+    }
     if (this.config.currentIndex) {
       this.currentIndex = this.config.currentIndex;
     }
