@@ -227,3 +227,9 @@ header h2 {
 .btn:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 720px) {
+  body {
+    background-image: url("img/background5.jpg");
+  }
+}
