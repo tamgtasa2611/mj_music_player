@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const dashboard = $(".dashboard");
 const cd = $(".cd");
 const header = $("header h2");
 const cdThumb = $(".cd-thumb");
@@ -52,7 +53,7 @@ const app = {
       image: "/img/black_or_white.jpg",
     },
     {
-      name: "Dont Stop Til You Get Enough",
+      name: "Don't Stop Til You Get Enough",
       singer: "Michael Jackson",
       path: "/music/dont_stop_til_you_get_enough.mp3",
       image: "/img/dont_stop_til_you_get_enough.jpg",
@@ -122,6 +123,72 @@ const app = {
       singer: "Michael Jackson",
       path: "/music/break_of_dawn.mp3",
       image: "/img/invincible.jpg",
+    },
+    {
+      name: "The Way You Make Me Feel",
+      singer: "Michael Jackson",
+      path: "/music/the_way_you_make_me_feel.mp3",
+      image: "/img/the_way_you_make_me_feel.jpg",
+    },
+    {
+      name: "They Don't Care About Us",
+      singer: "Michael Jackson",
+      path: "/music/they_dont_care_about_us.mp3",
+      image: "/img/they_dont_care_about_us.jpg",
+    },
+    {
+      name: "Stranger In Moscow",
+      singer: "Michael Jackson",
+      path: "/music/stranger_in_moscow.mp3",
+      image: "/img/stranger_in_moscow.jpg",
+    },
+    {
+      name: "Who Is It",
+      singer: "Michael Jackson",
+      path: "/music/who_is_it.mp3",
+      image: "/img/who_is_it.jpg",
+    },
+    {
+      name: "You Are Not Alone",
+      singer: "Michael Jackson",
+      path: "/music/you_are_not_alone.mp3",
+      image: "/img/you_are_not_alone.jpg",
+    },
+    {
+      name: "Liberian Girl",
+      singer: "Michael Jackson",
+      path: "/music/liberian_girl.mp3",
+      image: "/img/liberian_girl.jpg",
+    },
+    {
+      name: "In The Closet",
+      singer: "Michael Jackson",
+      path: "/music/in_the_closet.mp3",
+      image: "/img/in_the_closet.jpg",
+    },
+    {
+      name: "Love Never Felt So Good",
+      singer: "Michael Jackson",
+      path: "/music/love_never_felt_so_good.mp3",
+      image: "/img/love_never_felt_so_good.png",
+    },
+    {
+      name: "Give In To Me",
+      singer: "Michael Jackson",
+      path: "/music/give_in_to_me.mp3",
+      image: "/img/give_in_to_me.jpg",
+    },
+    {
+      name: "Leave Me Alone",
+      singer: "Michael Jackson",
+      path: "/music/leave_me_alone.mp3",
+      image: "/img/leave_me_alone.jpg",
+    },
+    {
+      name: "Blood On The Dance Floor",
+      singer: "Michael Jackson",
+      path: "/music/blood_on_the_dance_floor.mp3",
+      image: "/img/blood_on_the_dance_floor.jpg",
     },
   ],
   render: function () {
