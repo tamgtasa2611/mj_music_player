@@ -41,7 +41,9 @@ html {
 
 .dashboard {
   padding: 16px 16px 14px;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+  z-index: 5;
   position: fixed;
   top: 0;
   width: 100%;
@@ -116,14 +118,14 @@ header h2 {
 .progress-div {
   display: flex;
   justify-content: center;
-  margin: 4px 0;
+  margin: 8px 0;
 }
 
 .progress {
   width: 70%;
   -webkit-appearance: none;
   height: 10px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 5px;
   outline: none;
   opacity: 0.7;
@@ -142,7 +144,7 @@ header h2 {
 
 /* PLAYLIST */
 .playlist {
-  margin-top: 400px;
+  margin-top: 410px;
   padding: 12px;
   /* height: 38vh;
   overflow-y: scroll; */
@@ -176,7 +178,10 @@ header h2 {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  z-index: 0;
   padding: 8px 16px;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
@@ -235,8 +240,14 @@ header h2 {
   cursor: pointer;
 }
 
+.btn i {
+  color: white;
+}
+
 .btn i:hover {
-  color: rgba(255,255,255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+  transition: all 500ms ease;
 }
 
 @media only screen and (max-width: 720px) {
