@@ -16,6 +16,8 @@ const randomIcon = $(".btn-random i");
 const repeatBtn = $(".btn-repeat");
 const repeatIcon = $(".btn-repeat i");
 const playlist = $(".playlist");
+const timeStart = $(".time-start");
+const timeEnd = $(".time-end");
 const PLAYER_STORAGE_KEY = "F8-PLAYER";
 
 const app = {
@@ -282,12 +284,49 @@ const app = {
       };
 
       //khi tien do bai hat thay doi
+      isBiggerThan60 = function (sec, min) {
+        if (sec >= 60) {
+          if (sec - 60 * min < 10) {
+            return `0${sec - 60 * min}`;
+          } else {
+            return `${sec - 60 * min}`;
+          }
+        } else {
+          return sec;
+        }
+      };
       audio.ontimeupdate = function () {
         if (audio.duration) {
           const progressPercent = Math.floor(
             (audio.currentTime / audio.duration) * 100
           );
           progress.value = progressPercent;
+          //time start
+          secCount = Math.floor(audio.currentTime);
+          let currentMin = Math.floor(secCount / 60);
+
+          if (secCount < 10) {
+            timeStart.innerHTML = `0${currentMin}:0${isBiggerThan60(
+              secCount,
+              currentMin
+            )}`;
+          } else {
+            timeStart.innerHTML = `0${currentMin}:${isBiggerThan60(
+              secCount,
+              currentMin
+            )}`;
+          }
+
+          //time end
+          let totalMin = Math.floor(audio.duration / 60);
+          let totalTime = Math.floor(audio.duration);
+          let remainSec = totalTime - totalMin * 60;
+
+          if (remainSec < 10) {
+            timeEnd.innerHTML = `0${totalMin}:0${remainSec}`;
+          } else {
+            timeEnd.innerHTML = `0${totalMin}:${remainSec}`;
+          }
         }
       };
 
@@ -373,6 +412,8 @@ const app = {
       header.innerHTML = this.currentSong.name;
       cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
       audio.src = this.currentSong.path;
+      timeStart.innerHTML = `00:00`;
+      timeEnd.innerHTML = `00:00`;
       app.playedSongs.push(app.currentIndex);
     }
 

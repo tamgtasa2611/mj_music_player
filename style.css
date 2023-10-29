@@ -13,6 +13,7 @@ body {
   background-image: url("/img/background4.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  transition: all 1s ease;
 }
 
 html {
@@ -83,6 +84,8 @@ header h2 {
   background-color: #333;
   background-size: cover;
   margin: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 /* CONTROL */
@@ -104,8 +107,8 @@ header h2 {
 }
 
 .control .btn-toggle-play {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   font-size: 24px;
   color: #fff;
@@ -117,12 +120,13 @@ header h2 {
 
 .progress-div {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   margin: 8px 0;
 }
 
 .progress {
-  width: 70%;
+  width: 76%;
   -webkit-appearance: none;
   height: 10px;
   background: rgba(255, 255, 255, 0.4);
@@ -246,14 +250,29 @@ header h2 {
 
 .btn i:hover {
   transform: scale(1.2);
-  transition: all 500ms ease;
+  transition: all 200ms ease;
 }
 
 i.active {
   color: var(--primary-color);
 }
 
-@media only screen and (max-width: 720px) {
+.time {
+  display: flex;
+  align-items: center;
+  width: 12%;
+  color: var(--primary-color);
+}
+
+.time-start {
+  justify-content: left;
+}
+
+.time-end {
+  justify-content: right;
+}
+
+@media only screen and (max-width: 600px) {
   body {
     background-image: url("img/background5.jpg");
   }
